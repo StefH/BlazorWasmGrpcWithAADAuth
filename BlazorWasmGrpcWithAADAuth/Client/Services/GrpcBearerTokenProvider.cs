@@ -19,8 +19,6 @@ namespace BlazorWasmGrpcWithAADAuth.Client.Services
 
     public class GrpcBearerTokenProvider
     {
-        private const int CacheInMinutes = 5;
-
         private readonly IAccessTokenProvider _provider;
         private readonly NavigationManager _navigation;
         private AccessToken _lastToken;
@@ -36,9 +34,9 @@ namespace BlazorWasmGrpcWithAADAuth.Client.Services
         {
             var now = DateTimeOffset.Now;
 
-            if (_lastToken == null || now >= _lastToken.Expires.AddMinutes(-CacheInMinutes))
+            if (_lastToken == null || now >= _lastToken.Expires.AddMinutes(-5))
             {
-                var tokenResult = scopes?.Count() > 0 ?
+                var tokenResult = scopes?.Length > 0 ?
                     await _provider.RequestAccessToken(new AccessTokenRequestOptions { Scopes = scopes }) :
                     await _provider.RequestAccessToken();
 

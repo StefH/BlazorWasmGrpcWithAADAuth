@@ -1,7 +1,6 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using BlazorWasmGrpcWithAADAuth.Client.Pages;
 using BlazorWasmGrpcWithAADAuth.Client.Services;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
