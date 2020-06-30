@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package fileupload;
+
+service FileUpload {
+	rpc Upload (UploadRequest) returns (UploadResponse);
+}
+
+message UploadRequest {
+	bytes FileContent = 1;
+}
+
+message UploadResponse {
+	int32 FileSize = 1;
+}

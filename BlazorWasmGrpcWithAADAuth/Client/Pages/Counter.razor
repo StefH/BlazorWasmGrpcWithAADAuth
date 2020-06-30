@@ -1,0 +1,16 @@
+﻿@page "/counter"
+<h1>Counter</h1>
+
+<div>
+    <EditForm Model="Model">
+        <p>Token</p>
+        <InputText id="name" @bind-Value="Model.Token" />
+
+        <p>Current count: @currentCount</p>
+
+        <button class="btn btn-primary" @onclick="IncrementCount" disabled="@(cts != null)">Start</button>
+        <button class="btn btn-primary" @onclick="StopCount" disabled="@(cts == null)">Stop</button>
+
+        <p>Error = <pre>@Error</pre></p>
+    </EditForm>
+</div>

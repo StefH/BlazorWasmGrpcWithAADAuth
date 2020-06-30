@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>BlazorWasmGrpcWithAADAuth.Server-9E19B478-DE2F-4F3A-9E06-ADFDB953E4AA</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\BlazorWasmGrpcWithAADAuth.Client.csproj" />
+    <ProjectReference Include="..\Shared\BlazorWasmGrpcWithAADAuth.Shared.csproj" />
+
+    <!--<Protobuf Include="..\Proto\weather.proto" GrpcServices="Server" Link="Protos\weather.proto" />-->
+    <Protobuf Include="..\Proto\count.proto" GrpcServices="Server" Link="Protos\count.proto" />
+    <Protobuf Include="..\Proto\fileupload.proto" GrpcServices="Server" Link="Protos\fileupload.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.3" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.30.0-pre1" />
+    <PackageReference Include="Grpc.AspNetCore.Web" Version="2.30.0-pre1" />
+  </ItemGroup>
+
+</Project>
