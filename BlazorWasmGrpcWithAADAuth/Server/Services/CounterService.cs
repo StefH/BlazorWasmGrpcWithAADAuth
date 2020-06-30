@@ -21,12 +21,10 @@ using System.Threading.Tasks;
 using Count;
 using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
 
-namespace Server.Services
+namespace BlazorWasmGrpcWithAADAuth.Server.Services
 {
-    //[Authorize]
-    //[EnableCors("AllowAll")]
+    [Authorize]
     public class CounterService : Counter.CounterBase
     {
         public override async Task StartCounter(CounterRequest request, IServerStreamWriter<CounterResponse> responseStream, ServerCallContext context)

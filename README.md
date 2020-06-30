@@ -11,3 +11,4 @@ dotnet new blazorwasm -au SingleOrg --api-client-id "821eb724-edb8-4dba-b425-3f9
 ## References
 - https://github.com/coding-flamingo/BlazorWasmWithAADAuth
 - https://www.youtube.com/watch?v=6y2dSNX3xcc
+- https://blog.sanderaernouts.com/grpc-aspnetcore-azure-ad-authentication

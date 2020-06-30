@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AuthorizedBaseClient.cs" />
     <Compile Remove="Messages\WeatherForecast.cs" />
   </ItemGroup>
 

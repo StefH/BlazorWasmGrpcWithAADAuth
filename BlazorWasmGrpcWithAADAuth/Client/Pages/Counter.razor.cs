@@ -47,7 +47,7 @@ namespace BlazorWasmGrpcWithAADAuth.Client.Pages
             };
 
             var client = new Count.Counter.CounterClient(Channel);
-            var call = client.StartCounter(new CounterRequest() { Start = currentCount }, headers, cancellationToken: cts.Token);
+            var call = client.StartCounter(new CounterRequest { Start = currentCount }, headers, cancellationToken: cts.Token);
 
             try
             {
@@ -66,7 +66,7 @@ namespace BlazorWasmGrpcWithAADAuth.Client.Pages
             catch (RpcException rpcException) when (rpcException.StatusCode == StatusCode.Unauthenticated)
             {
                 Error = rpcException.Message;
-                
+
             }
             catch (Exception exception)
             {

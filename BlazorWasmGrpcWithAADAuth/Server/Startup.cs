@@ -1,3 +1,4 @@
+using BlazorWasmGrpcWithAADAuth.Server.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
@@ -5,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Server.Services;
 
 namespace BlazorWasmGrpcWithAADAuth.Server
 {
@@ -59,11 +59,10 @@ namespace BlazorWasmGrpcWithAADAuth.Server
 
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapGrpcService<UploadFileService>().EnableGrpcWeb();
+                endpoints.MapGrpcService<UploadFileService>().EnableGrpcWeb();
                 //endpoints.MapGrpcService<WeatherService>().EnableGrpcWeb();
 
-                endpoints.MapGrpcService<CounterService>().EnableGrpcWeb()
-                    .RequireAuthorization(); // https://blog.sanderaernouts.com/grpc-aspnetcore-azure-ad-authentication
+                endpoints.MapGrpcService<CounterService>().EnableGrpcWeb();
                     
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();

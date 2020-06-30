@@ -1,11 +1,11 @@
-﻿using Fileupload;
-using Grpc.Core;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Fileupload;
+using Grpc.Core;
 
-namespace Server.Services
+namespace BlazorWasmGrpcWithAADAuth.Server.Services
 {
-    public partial class UploadFileService : FileUpload.FileUploadBase
+    public class UploadFileService : FileUpload.FileUploadBase
     {
         public override async Task<UploadResponse> Upload(UploadRequest request, ServerCallContext context)
         {
