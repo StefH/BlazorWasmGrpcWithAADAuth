@@ -6,11 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="AuthorizedBaseClient.cs" />
-    <Compile Remove="Messages\WeatherForecast.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="3.2.0" PrivateAssets="all" />
@@ -29,10 +24,6 @@
     <!--<Protobuf Include="..\Proto\weather.proto" GrpcServices="Client" Link="Protos\weather.proto" Access="Internal" />-->
     <Protobuf Include="..\Proto\count.proto" GrpcServices="Client" Link="Protos\count.proto" Access="Internal" />
     <Protobuf Include="..\Proto\fileupload.proto" GrpcServices="Client" Link="Protos\fileupload.proto" Access="Internal" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Messages\" />
   </ItemGroup>
 
 
