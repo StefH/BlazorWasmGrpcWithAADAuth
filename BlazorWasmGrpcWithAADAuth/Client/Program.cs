@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 using Client.Authentication.Interfaces;
 using Client.Grpc.Interfaces;
 using Client.Scopes;
-using Grpc.Net.Client;
-using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +13,11 @@ namespace Client
 {
     public class Program
     {
+#if USE_IDENTITY
         internal static string[] Scopes = { "821eb724-edb8-4dba-b425-3f953250c0ae/API.Access" };
+#else
+        internal static string[] Scopes = { "api://821eb724-edb8-4dba-b425-3f953250c0ae/API.Access" };
+#endif
 
         public static async Task Main(string[] args)
         {
