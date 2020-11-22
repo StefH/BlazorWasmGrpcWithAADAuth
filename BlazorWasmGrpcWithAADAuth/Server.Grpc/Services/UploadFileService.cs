@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Fileupload;
 using Grpc.Core;
 
-namespace BlazorWasmGrpcWithAADAuth.Server.Services
+namespace Server.Grpc.Services
 {
     public class UploadFileService : FileUpload.FileUploadBase
     {

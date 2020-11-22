@@ -1,4 +1,4 @@
-﻿using BlazorWasmGrpcWithAADAuth.Shared;
+﻿using Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace BlazorWasmGrpcWithAADAuth.Server.Controllers
+namespace Server.Controllers
 {
     [Authorize]
     [ApiController]

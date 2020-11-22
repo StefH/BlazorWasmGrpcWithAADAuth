@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace BlazorWasmGrpcWithAADAuth.Server
+namespace Server
 {
     public class Program
     {

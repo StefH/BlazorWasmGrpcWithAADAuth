@@ -1,4 +1,3 @@
-using BlazorWasmGrpcWithAADAuth.Server.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.AzureAD.UI;
 using Microsoft.AspNetCore.Builder;
@@ -6,8 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Server.Grpc.Services;
 
-namespace BlazorWasmGrpcWithAADAuth.Server
+namespace Server
 {
     public class Startup
     {
@@ -60,10 +60,8 @@ namespace BlazorWasmGrpcWithAADAuth.Server
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<UploadFileService>().EnableGrpcWeb();
-                //endpoints.MapGrpcService<WeatherService>().EnableGrpcWeb();
-
                 endpoints.MapGrpcService<CounterService>().EnableGrpcWeb();
-                    
+
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
