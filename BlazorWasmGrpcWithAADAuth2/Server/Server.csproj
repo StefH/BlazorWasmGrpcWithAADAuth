@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	<PropertyGroup>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<TargetFramework>net5.0</TargetFramework>
 		<UserSecretsId>Server-9E19B478-DE2F-4F3A-9E06-ADFDB953E4AA</UserSecretsId>
 		<WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
 		<DefineConstants>$(DefineConstants);USE_IDENTITY</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Identity.Web" Version="1.*" />
 		<PackageReference Include="Grpc.AspNetCore" Version="2.33.1" />
 		<PackageReference Include="Grpc.AspNetCore.Web" Version="2.33.1" />

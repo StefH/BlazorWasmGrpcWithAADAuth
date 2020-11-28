@@ -39,21 +39,18 @@ namespace Client
                 {
                     options.ProviderOptions.DefaultAccessTokenScopes.Add(scope);
                 }
+
+                // no popup window
+                options.ProviderOptions.LoginMode = "redirect";
+
+                // After sign out, the user should be brought back to the home page
+                options.AuthenticationPaths.LogOutSucceededPath = "";
             });
 
             builder.Services.AddClientAuthentication();
             builder.Services.AddGrpc(builder.HostEnvironment.BaseAddress);
 
             builder.Services.AddSingleton<IScopeContext<IAuthenticatedCounterClient>, CounterClientScopeContext>();
-
-            //builder.Services.AddGrpcBearerTokenProvider();
-
-            //builder.Services.AddScoped(services =>
-            //{
-            //    // Create a channel with a GrpcWebHandler that is addressed to the backend server. GrpcWebText is used because server streaming requires it.
-            //    var httpHandler = new GrpcWebHandler(GrpcWebMode.GrpcWebText, new HttpClientHandler());
-            //    return GrpcChannel.ForAddress(builder.HostEnvironment.BaseAddress, new GrpcChannelOptions { HttpHandler = httpHandler });
-            //});
 
             await builder.Build().RunAsync();
         }
